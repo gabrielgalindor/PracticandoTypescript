@@ -18,14 +18,18 @@ function resta(x, y) {
 var mifuncion = function (x, y) {
     return x * y;
 };
+var dividir = function (x, y) { return y / x; };
 var vector = /** @class */ (function () {
-    function vector(nombrev) {
+    function vector(ix, iy, nombrev) {
         if (!nombrev) {
             this.nombre = "v";
         }
         else {
             this.nombre = nombrev;
         }
+        this.ix = ix;
+        this.iy = iy;
+        this.magnitud = Math.sqrt((ix * ix) + (iy * iy));
     }
     vector.prototype.getNombre = function () {
         return this.nombre;
@@ -40,7 +44,9 @@ a2 = 2;
 a1 += 1;
 b = resta(a1);
 console.log(b);
-var vector1 = new vector("A");
+var vector1 = new vector(2, 2, "A");
 console.log(vector1.getNombre());
-var vector2 = new vector();
+console.log("Magnitud del vector " + vector1.magnitud);
+var vector2 = new vector(2, 3);
 console.log(vector2.getNombre());
+console.log("Magnitud del vector " + vector2.magnitud);
